@@ -38,6 +38,7 @@ def main():
                                 gameBoard.boardArray[i][j].unblock()
             if event.type == pygame.QUIT:
                 run = False
+        #calling the function
         agent.bfs(gameBoard)
         gameBoard.draw_world(WIN)
     pygame.quit()
