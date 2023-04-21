@@ -5,7 +5,7 @@ from Environment import Board
 from Agent import Agent
 
 # initialize:
-FPS = 100
+FPS = 60
 pygame.init()
 WIN = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Search Game")
