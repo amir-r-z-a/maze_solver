@@ -1,5 +1,4 @@
 import math
-
 import colors
 from Environment import Board
 
@@ -37,6 +36,7 @@ def tile_actions(tile, father, x1, y1):
 
 class Agent:
     def __init__(self, board, start, end):
+        self.complexity = 0
         self.end_point = end
         self.bb = board
         self.position = board.get_agent_pos()
@@ -98,10 +98,12 @@ class Agent:
         if self.last_tile.isStart:
             self.last_tile.set_color(colors.green)
             self.finish = True
+            print(f'time complexity for this algorithm :  {self.complexity}')
         return
 
     # BFS ...................................................................
     def bfs(self, bb: Board):
+        self.complexity += 1
         if self.finish:
             return
         if self.reach_goal:
@@ -125,6 +127,7 @@ class Agent:
     # DFS .........................................................
 
     def dfs(self, bb):
+        self.complexity += 1
         if self.finish:
             return
         if self.reach_goal:
@@ -145,6 +148,7 @@ class Agent:
     # A_STAR..........................................................................
 
     def a_star(self, bb):
+        self.complexity += 1
         if self.finish:
             return
         if self.reach_goal:
