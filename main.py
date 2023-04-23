@@ -39,7 +39,7 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
         #calling the function
-        agent.bfs(gameBoard)
+        agent.dfs(gameBoard)
         gameBoard.draw_world(WIN)
     pygame.quit()
 
